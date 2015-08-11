@@ -1,0 +1,9 @@
+### 下载：
+$ wget -P 20150811 http://img.my.csdn.net/uploads/201210/17/1350462888_9944.jpg
+
+### 上传
+$ megamkdir /Root/hexo
+$ megamkdir /Root/hexo/20150811
+$ megaput --path /Root/hexo/20150811 20150811/1350462888_9944.jpg
+
+### 获得链接
