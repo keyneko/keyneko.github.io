@@ -87,15 +87,13 @@
 <h2 id="二、viewDidLoad">二、viewDidLoad</h2><p>这个函数在controller加载了相关的views后被调用，<strong>而不论这些views存储在nib文件里还是在loadView函数中生成。</strong>而多数情况下是做nib文件的后续工作。<br>网上资料对这个函数的描述则完全不对。</p>
 <h2 id="三、viewDidUnload">三、viewDidUnload</h2><p>这个函数是viewDidLoad的对立函数。在程序内存欠缺时，这个函数被controller调用，来释放它的view以及view相关的对象。由于controller通常保存这view以及相关object的引用，所以你必须使用这个函数来放弃这些对象的所有权以便内存回收。但不要释放那些难以重建的数据。<br>通常controller会保存nib文件建立的views的引用，<strong>但是也可能会保存着loadView函数创建的对象的引用。</strong>最完美的方法是使用合成器方法：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span><span class="variable">.myCertainView</span> = <span class="literal">nil</span>;</span><br></pre></td></tr></table></figure></p>
 <p>这样合成器会release这个view，如果你没有使用property，那么你得自己显示释放这个view。</p>
-<h2 id="四、结论">四、结论</h2><p>所以流程应该是这样：</p>
-<blockquote>
-<p> (loadView/nib文件)来加载view到内存 ——&gt; viewDidLoad函数进一步初始化这些view ——&gt; 内存不足时，调用viewDidUnload函数释放views —-&gt; 当需要使用view时有回到第一步<br>如此循环</p>
-</blockquote>
+<hr>
+<h2 id="四、结论">四、结论</h2><p>所以流程应该是这样：<br><code>(loadView/nib文件)来加载view到内存 ——&gt; viewDidLoad函数进一步初始化这些view ——&gt; 内存不足时，调用viewDidUnload函数释放views —-&gt; 当需要使用view时有回到第一步</code><br>如此循环</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/11/关于loadView-viewDidLoad-viewDidUnload/" data-id="cid76xmhn0002s5nr7rc8agjx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/11/关于loadView-viewDidLoad-viewDidUnload/" data-id="cid76y4pa0002slnr6o5jas55" class="article-share-link">Share</a>
       
       
     </footer>
@@ -127,13 +125,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="initWithFrame_和_initWithCoder">initWithFrame  和   initWithCoder</h3><p>当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> =[superinitWithFrame:frame]) &#123;</span><br><span class="line">        <span class="comment">// 初始化代码</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>用于视图加载nib文件，从nib中加载对象实例时，使用 initWithCoder初始化这些实例对象<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)initWithCoder:(<span class="built_in">NSCoder</span>*)coder</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> =[superinitWithcoder:coder]) &#123;</span><br><span class="line">        <span class="comment">// 初始化代码</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="initWithFrame">initWithFrame</h3><p>当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> =[superinitWithFrame:frame]) &#123;</span><br><span class="line">        <span class="comment">// 初始化代码</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="initWithCoder">initWithCoder</h3><p>用于视图加载nib文件，从nib中加载对象实例时，使用 initWithCoder初始化这些实例对象<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)initWithCoder:(<span class="built_in">NSCoder</span>*)coder</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> =[superinitWithcoder:coder]) &#123;</span><br><span class="line">        <span class="comment">// 初始化代码</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/11/initWithFrame-和-initWithCoder/" data-id="cid76xmhp0004s5nrcugdgf6n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/11/initWithFrame-和-initWithCoder/" data-id="cid76y4pc0004slnru65e6q2l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -171,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/11/继承UIView，重写drawRect方法/" data-id="cid76xmhl0001s5nrfo5o5k1u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/11/继承UIView，重写drawRect方法/" data-id="cid76y4p80001slnr91se3so7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -238,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/30/openURL使用/" data-id="cid76xmho0003s5nrr7dddvbz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/30/openURL使用/" data-id="cid76y4pb0003slnrchxbl6d3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/30/hello-world/" data-id="cid76xmh80000s5nrjbiv662j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/30/hello-world/" data-id="cid76y4ox0000slnr8f69jgdy" class="article-share-link">Share</a>
       
       
     </footer>

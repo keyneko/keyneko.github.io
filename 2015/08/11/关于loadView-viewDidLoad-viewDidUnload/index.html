@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/08/11/关于loadView-viewDidLoad-viewDidUnload/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一、loadView永远不要主动调用这个函数。view controller会在view的property被请求并且当前view值为nil时调用这个函数。如果你手动创建view，你应该重载这个函数。如果你用IB创建view并初始化view controller，那就意味着你使用initWithNibName:bundle:方法，这时，你不应该重载loadView函数。这个方法的默认实现是这样：先寻">
-<meta property="og:updated_time" content="2015-08-11T10:13:29.000Z">
+<meta property="og:updated_time" content="2015-08-11T10:18:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于loadView, viewDidLoad, viewDidUnload">
 <meta name="twitter:description" content="一、loadView永远不要主动调用这个函数。view controller会在view的property被请求并且当前view值为nil时调用这个函数。如果你手动创建view，你应该重载这个函数。如果你用IB创建view并初始化view controller，那就意味着你使用initWithNibName:bundle:方法，这时，你不应该重载loadView函数。这个方法的默认实现是这样：先寻">
@@ -86,15 +86,13 @@
 <h2 id="二、viewDidLoad">二、viewDidLoad</h2><p>这个函数在controller加载了相关的views后被调用，<strong>而不论这些views存储在nib文件里还是在loadView函数中生成。</strong>而多数情况下是做nib文件的后续工作。<br>网上资料对这个函数的描述则完全不对。</p>
 <h2 id="三、viewDidUnload">三、viewDidUnload</h2><p>这个函数是viewDidLoad的对立函数。在程序内存欠缺时，这个函数被controller调用，来释放它的view以及view相关的对象。由于controller通常保存这view以及相关object的引用，所以你必须使用这个函数来放弃这些对象的所有权以便内存回收。但不要释放那些难以重建的数据。<br>通常controller会保存nib文件建立的views的引用，<strong>但是也可能会保存着loadView函数创建的对象的引用。</strong>最完美的方法是使用合成器方法：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span><span class="variable">.myCertainView</span> = <span class="literal">nil</span>;</span><br></pre></td></tr></table></figure></p>
 <p>这样合成器会release这个view，如果你没有使用property，那么你得自己显示释放这个view。</p>
-<h2 id="四、结论">四、结论</h2><p>所以流程应该是这样：</p>
-<blockquote>
-<p> (loadView/nib文件)来加载view到内存 ——&gt; viewDidLoad函数进一步初始化这些view ——&gt; 内存不足时，调用viewDidUnload函数释放views —-&gt; 当需要使用view时有回到第一步<br>如此循环</p>
-</blockquote>
+<hr>
+<h2 id="四、结论">四、结论</h2><p>所以流程应该是这样：<br><code>(loadView/nib文件)来加载view到内存 ——&gt; viewDidLoad函数进一步初始化这些view ——&gt; 内存不足时，调用viewDidUnload函数释放views —-&gt; 当需要使用view时有回到第一步</code><br>如此循环</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/11/关于loadView-viewDidLoad-viewDidUnload/" data-id="cid76xmhn0002s5nr7rc8agjx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/11/关于loadView-viewDidLoad-viewDidUnload/" data-id="cid76y4pa0002slnr6o5jas55" class="article-share-link">Share</a>
       
       
     </footer>

@@ -5,16 +5,16 @@
   
   <title>initWithFrame 和 initWithCoder | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="initWithFrame  和   initWithCoder当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化1234567- (id)initWithFrame:(CGRect)frame&amp;#123;    if (self =[superinitWithFrame:frame]) &amp;#123;        // 初始化代码">
+  <meta name="description" content="initWithFrame当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化1234567- (id)initWithFrame:(CGRect)frame&amp;#123;    if (self =[superinitWithFrame:frame]) &amp;#123;        // 初始化代码    &amp;#125;    return s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="initWithFrame 和 initWithCoder">
 <meta property="og:url" content="http://yoursite.com/2015/08/11/initWithFrame-和-initWithCoder/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="initWithFrame  和   initWithCoder当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化1234567- (id)initWithFrame:(CGRect)frame&amp;#123;    if (self =[superinitWithFrame:frame]) &amp;#123;        // 初始化代码">
-<meta property="og:updated_time" content="2015-08-11T10:06:33.000Z">
+<meta property="og:description" content="initWithFrame当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化1234567- (id)initWithFrame:(CGRect)frame&amp;#123;    if (self =[superinitWithFrame:frame]) &amp;#123;        // 初始化代码    &amp;#125;    return s">
+<meta property="og:updated_time" content="2015-08-11T10:19:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="initWithFrame 和 initWithCoder">
-<meta name="twitter:description" content="initWithFrame  和   initWithCoder当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化1234567- (id)initWithFrame:(CGRect)frame&amp;#123;    if (self =[superinitWithFrame:frame]) &amp;#123;        // 初始化代码">
+<meta name="twitter:description" content="initWithFrame当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化1234567- (id)initWithFrame:(CGRect)frame&amp;#123;    if (self =[superinitWithFrame:frame]) &amp;#123;        // 初始化代码    &amp;#125;    return s">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -82,13 +82,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="initWithFrame_和_initWithCoder">initWithFrame  和   initWithCoder</h3><p>当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> =[superinitWithFrame:frame]) &#123;</span><br><span class="line">        <span class="comment">// 初始化代码</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>用于视图加载nib文件，从nib中加载对象实例时，使用 initWithCoder初始化这些实例对象<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)initWithCoder:(<span class="built_in">NSCoder</span>*)coder</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> =[superinitWithcoder:coder]) &#123;</span><br><span class="line">        <span class="comment">// 初始化代码</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="initWithFrame">initWithFrame</h3><p>当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> =[superinitWithFrame:frame]) &#123;</span><br><span class="line">        <span class="comment">// 初始化代码</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="initWithCoder">initWithCoder</h3><p>用于视图加载nib文件，从nib中加载对象实例时，使用 initWithCoder初始化这些实例对象<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)initWithCoder:(<span class="built_in">NSCoder</span>*)coder</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> =[superinitWithcoder:coder]) &#123;</span><br><span class="line">        <span class="comment">// 初始化代码</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/11/initWithFrame-和-initWithCoder/" data-id="cid76xmhp0004s5nrcugdgf6n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/11/initWithFrame-和-initWithCoder/" data-id="cid76y4pc0004slnru65e6q2l" class="article-share-link">Share</a>
       
       
     </footer>
