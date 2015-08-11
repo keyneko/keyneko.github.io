@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Hexo</title>
+  <title>initWithFrame 和 initWithCoder | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="initWithFrame  和   initWithCoder当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化1234567- (id)initWithFrame:(CGRect)frame&amp;#123;    if (self =[superinitWithFrame:frame]) &amp;#123;        // 初始化代码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2015/07/30/hello-world/index.html">
+<meta property="og:title" content="initWithFrame 和 initWithCoder">
+<meta property="og:url" content="http://yoursite.com/2015/08/11/initWithFrame-和-initWithCoder/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2015-08-11T07:52:12.000Z">
+<meta property="og:description" content="initWithFrame  和   initWithCoder当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化1234567- (id)initWithFrame:(CGRect)frame&amp;#123;    if (self =[superinitWithFrame:frame]) &amp;#123;        // 初始化代码">
+<meta property="og:updated_time" content="2015-08-11T10:06:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="initWithFrame 和 initWithCoder">
+<meta name="twitter:description" content="initWithFrame  和   initWithCoder当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化1234567- (id)initWithFrame:(CGRect)frame&amp;#123;    if (self =[superinitWithFrame:frame]) &amp;#123;        // 初始化代码">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,10 +60,10 @@ Quick">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-initWithFrame-和-initWithCoder" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/07/30/hello-world/" class="article-date">
-  <time datetime="2015-07-30T03:35:40.000Z" itemprop="datePublished">2015-07-30</time>
+    <a href="/2015/08/11/initWithFrame-和-initWithCoder/" class="article-date">
+  <time datetime="2015-08-11T10:05:13.000Z" itemprop="datePublished">2015-08-11</time>
 </a>
     
   </div>
@@ -77,7 +74,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      initWithFrame 和 initWithCoder
     </h1>
   
 
@@ -85,20 +82,13 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h3 id="initWithFrame_和_initWithCoder">initWithFrame  和   initWithCoder</h3><p>当我们所写的程序里没用用Nib文件(XIB)时,用代码控制视图内容，需要调用initWithFrame去初始化<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> =[superinitWithFrame:frame]) &#123;</span><br><span class="line">        <span class="comment">// 初始化代码</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>用于视图加载nib文件，从nib中加载对象实例时，使用 initWithCoder初始化这些实例对象<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)initWithCoder:(<span class="built_in">NSCoder</span>*)coder</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> =[superinitWithcoder:coder]) &#123;</span><br><span class="line">        <span class="comment">// 初始化代码</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/30/hello-world/" data-id="cid76xmh80000s5nrjbiv662j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/11/initWithFrame-和-initWithCoder/" data-id="cid76xmhp0004s5nrcugdgf6n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -107,15 +97,20 @@ Quick">
     
 <nav id="article-nav">
   
-    <a href="/2015/07/30/openURL使用/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/08/11/关于loadView-viewDidLoad-viewDidUnload/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          openURL使用
+          关于loadView, viewDidLoad, viewDidUnload
         
       </div>
     </a>
   
+  
+    <a href="/2015/08/11/继承UIView，重写drawRect方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">继承UIView，重写drawRect方法</div>
+    </a>
   
 </nav>
 
